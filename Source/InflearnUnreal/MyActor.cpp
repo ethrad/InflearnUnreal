@@ -26,6 +26,8 @@ void AMyActor::BeginPlay()
 {
 	Super::BeginPlay();
 	
+	UE_LOG(LogTemp, Warning, TEXT("BeginPlay %d"), 5);
+
 }
 
 // Called every frame
@@ -33,5 +35,7 @@ void AMyActor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	//UE_LOG(LogTemp, Error, TEXT("Tick %f"), DeltaTime)
+	AddActorLocalRotation(FRotator(RotateSpeed * DeltaTime, RotateSpeed * DeltaTime, 0.f));
 }
 
